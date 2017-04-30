@@ -1,0 +1,27 @@
+{
+  "name": "hyperbutter-microphone",
+  "version": "1.0.0",
+  "description": "Microphone plugin for use of speech-to-text in Hyper Butter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://endoplasmic@github.com/endoplasmic/hyperbutter-microphone.git"
+  },
+  "keywords": [
+    "hyperbutter",
+    "microphone",
+    "capture"
+  ],
+  "author": "Scott Ysebert <endoplasmic@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/endoplasmic/hyperbutter-microphone/issues"
+  },
+  "homepage": "https://github.com/endoplasmic/hyperbutter-microphone#readme",
+  "dependencies": {
+    "node-record-lpcm16": "^0.3.0"
+  }
+}
