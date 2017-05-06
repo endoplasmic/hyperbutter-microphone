@@ -25,7 +25,7 @@ function Microphone(config, settings) {
   };
 
   this.stop = (callback) => {
-    record.stop();
+    if (mic !== undefined) record.stop();
     mic = undefined;
     if (callback) callback(null);
   };
