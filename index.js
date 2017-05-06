@@ -7,10 +7,8 @@ const util = require('util');
 function Microphone(config, settings) {
   this.init = () => {
     this.emit('subscribe', {
-      'audio-input': {
-        start: this.start,
-        stop: this.stop,
-      },
+      start: this.start,
+      stop: this.stop,
     });
   };
 
