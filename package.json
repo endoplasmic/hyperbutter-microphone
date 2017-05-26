@@ -1,6 +1,6 @@
 {
   "name": "hyperbutter-microphone",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Microphone plugin for use of speech-to-text in Hyper Butter",
   "main": "index.js",
   "scripts": {
