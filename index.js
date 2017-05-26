@@ -12,11 +12,25 @@ function Microphone(config, settings) {
     });
   };
 
+  // if threshold isn't set, we set it to 0
+  if (config.threshold === undefined) config.threshold = 0;
+
+  // if no sample rate, we set it 16000
+  if (config.sampleRate === undefined) config.sampleRate = 16000;
+
   let mic;
+  let streaming = false; // this helps with not sending data after we stop
 
   this.start = (callback) => {
+    if (mic !== undefined) record.stop();
     mic = record.start(config);
+
+    streaming = true;
+    
+    this.emit('started');
+    
     mic.on('data', (data) => {
+      if (!streaming) return;
       if (callback) callback(null, data);
       this.emit('data', data);
     });
@@ -25,7 +39,11 @@ function Microphone(config, settings) {
   this.stop = (callback) => {
     if (mic !== undefined) record.stop();
     mic = undefined;
+
+    streaming = false;
+    
     if (callback) callback(null);
+    this.emit('stopped');
   };
 
   return this;
